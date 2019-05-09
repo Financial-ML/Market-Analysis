@@ -10,3 +10,7 @@ Components
 3-ML-Models
 
 4-Terster
+
+
+Connection
+Connect the strategy that has been developed in python with MQL4 in a real time connection the structure has been developed by darwinex labs you can see their project for installation and more information.
