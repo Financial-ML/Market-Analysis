@@ -41,9 +41,9 @@ class DWX_ZeroMQ_Connector():
         # Client ID
         self._ClientID = _ClientID
         
-        self._lock = Lock()
-        
         self._market_open = True
+        
+        self._lock = Lock()
 
         # ZeroMQ Host
         self._host = _host
@@ -436,17 +436,17 @@ class DWX_ZeroMQ_Connector():
                     if msg != "":
                         _symbol, _data = msg.split(" ")
                         #here i reseve data from mql4
-                        _date, _open, _close, _high, _low, _volume, _ma, _sto, _fibo, _ac, _bul, _ic, _macd, _rsi, _bear, _ad, _atr, _ao, _mom, _osma = _data.split(string_delimiter)
+                        _year, _month, _day, _hour , _open, _close, _high, _low, _volume, _ma, _sto, _fibo, _ac, _bul, _ic, _macd, _rsi, _bear, _ad, _atr, _ao, _mom, _osma = _data.split(string_delimiter)
                         _timestamp = str(Timestamp.now('UTC'))[:-6]
                         
                         if self._verbose:
-                            print("\n[" + _symbol + "] " + _timestamp + " (" + _date + "/" + _open +  "/" + _close + "/" + _high + "/" + _low + "/" + _volume + "/" + _ma + "/" + _sto + "/" + _fibo + "/" + _ac + "/" + _bul + "/" + _ic + "/" + _macd + "/" + _rsi + "/" + _bear + "/" + _ad + "/" + _atr + "/" + _ao + "/" + _mom + "/" + _osma + ")")
+                            print("\n[" + _symbol + "] " + _timestamp + " (" + _year +  "/" + _month +  "/" + _day +  "/"+ _hour +  "/" + _open +  "/" + _close + "/" + _high + "/" + _low + "/" + _volume + "/" + _ma + "/" + _sto + "/" + _fibo + "/" + _ac + "/" + _bul + "/" + _ic + "/" + _macd + "/" + _rsi + "/" + _bear + "/" + _ad + "/" + _atr + "/" + _ao + "/" + _mom + "/" + _osma + ")")
                     
                         # Update Market Data DB
                         if _symbol not in self._Market_Data_DB.keys():
                             self._Market_Data_DB[_symbol] = {}
                         #the place were i hold the market state ((note)date is hour i use it for algo trading)                            
-                        self._Marketstate = [float(_date), float(_open), float(_close),float(_high), float(_low), float(_volume),float(_ma), float(_sto), float(_fibo), float(_ac), float(_bul), float(_ic), float(_macd), float(_rsi), float(_bear), float(_ad), float(_atr), float(_ao), float(_mom), float(_osma)]
+                        self._Marketstate = [int(_year), int(_month), int(_day), int(_hour), float(_open), float(_close),float(_high), float(_low), float(_volume),float(_ma), float(_sto), float(_fibo), float(_ac), float(_bul), float(_ic), float(_macd), float(_rsi), float(_bear), float(_ad), float(_atr), float(_ao), float(_mom), float(_osma)]
                         
                 except zmq.error.Again:
                     pass # resource temporarily unavailable, nothing to print
@@ -458,7 +458,7 @@ class DWX_ZeroMQ_Connector():
     ##########################################################################
     
     """
-    Function to subscribe to given Symbol's BID/ASK feed from MetaTrader
+    Function to subscribe to given Symbol
     """
     def _DWX_MTX_SUBSCRIBE_MARKETDATA_(self, _symbol, _string_delimiter=';'):
         
@@ -470,10 +470,10 @@ class DWX_ZeroMQ_Connector():
             self._MarketData_Thread = Thread(target=self._DWX_ZMQ_Poll_Data, args=(_string_delimiter))
             self._MarketData_Thread.start()
         
-        print("[KERNEL] Subscribed to {} BID/ASK updates. See self._Market_Data_DB.".format(_symbol))
+        print("[KERNEL] Subscribed to _Market_Data_DB.".format(_symbol))
     
     """
-    Function to unsubscribe to given Symbol's BID/ASK feed from MetaTrader
+    Function to unsubscribe to given Symbol
     """
     def _DWX_MTX_UNSUBSCRIBE_MARKETDATA_(self, _symbol):
         
@@ -501,11 +501,11 @@ class DWX_ZeroMQ_Connector():
         while self._market_open:
             try:
                 #Every one Hour make a prediction
-                date=self._Marketstate[0]
+                date=[self._Marketstate[:4]]
                 if date != date1:
                     date1=date
                     #new prediction
-                    df=[self._Marketstate[1:]]
+                    df=[self._Marketstate[4:]]
                     predicted = clf_load.predict(df)
                     print(predicted)
                     #If there is a new prediction
@@ -520,12 +520,17 @@ class DWX_ZeroMQ_Connector():
             except:
                 self._market_open=False
                 print ("CLOSED")
-
                 
 
     ##########################################################################
 
 
+    def _run_(self):
+         _t = Thread(target=self._trader_)
+         _t.daemon = True
+         _t.start()
+                        
+    
     
     
     
