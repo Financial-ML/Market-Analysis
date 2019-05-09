@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from sklearn.externals import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -6,6 +7,10 @@ from sklearn.metrics import classification_report
 
 
 df = pd.read_csv('DataSet.csv')
+
+exists = os.path.isfile('saved_model.pkl')
+if exists:
+    os.remove('saved_model.pkl')
 
 columns = ['OPEN','CLOSE','HIGH','LOW','VOLUME','MA', 'STO', 'FIBO', 'AC', 'BUL', 'ICCI', 'MACD', 'RSI','BEAR','AD','ATR','AO','MOM','OSMA']
 labels = df['MARKET'].values

@@ -11,7 +11,7 @@
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
 int line_read[][5]; //assign array of intger that will store  columns  rows of csv data
-int x,n=0,num=0,loop=0;
+int x=0,n=0,num=0,loop=0,r=0;
 int OnInit()
   {
   int filehandle=FileOpen("tester2.bin",FILE_READ|FILE_BIN|FILE_COMMON);
@@ -62,6 +62,8 @@ void OnTick()
 The algoritm every 1-hour rea a new prediction 
 if it has been change close the previous order 
 and open a new order.
+with error detection 0  0  0  1  0  0
+1 is error
 */
 int hour,day,month,year;
 year=TimeYear(TimeCurrent());
@@ -71,9 +73,10 @@ hour=TimeHour(TimeCurrent());
 
 if(line_read[loop][0]==year&&line_read[loop][1]==month&&line_read[loop][2]==day &&line_read[loop][3]==hour)//time = time
 {
-Alert(line_read[loop][3],hour);
 if(n!=0){
-if(line_read[loop-1][4]!=line_read[loop][4]){
+if(line_read[x][4]!=line_read[loop][4]&&r==1){
+x=0;
+r=0;
 close();
 if(line_read[loop][4]==1)
 {
@@ -83,6 +86,10 @@ if(line_read[loop][4]==0)
 {
 ordersell();
 }
+}
+if(line_read[loop-1][4]!=line_read[loop][4]){
+x=loop-1;
+r=1;
 }
 }
 n++;

@@ -91,7 +91,7 @@ int OnInit()
    pullSocket.setReceiveHighWaterMark(1);
    
    pullSocket.setLinger(0);
-   
+    
    if (Publish_MarketData == TRUE)
    {
       // Send new market data to PUB_PORT that client is subscribed to.
@@ -412,9 +412,11 @@ string Marketstate(string symbol) {
 double ma,sto,fibo,ac,bul,ic,macd,rsi,open,close,high,low,bear,ad,atr,ao,mom,osma;
 long volume;
 int i=0;
-datetime date;
-
-date=TimeHour(TimeCurrent());
+datetime hour,day,month,year;
+year=TimeYear(TimeCurrent());
+month=TimeMonth(TimeCurrent());
+day=TimeDay(TimeCurrent());
+hour=TimeHour(TimeCurrent());
 open=OPEN(i);
 close=CLOSE(i);
 high=HIGH(i);
@@ -435,7 +437,7 @@ ao=AO(i);
 mom=MOM(i);
 osma=OSMA(i);
 
-       return(StringFormat("%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f", date, open, close, high, low, volume, ma, sto, fibo, ac, bul, ic, macd, rsi, bear, ad, atr, ao, mom, osma));
+       return(StringFormat("%i;%i;%i;%i;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f", year, month, day ,hour, open, close, high, low, volume, ma, sto, fibo, ac, bul, ic, macd, rsi, bear, ad, atr, ao, mom, osma));
    }
    
    // Default
