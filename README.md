@@ -1,7 +1,7 @@
 # Market-Analysis
 Different Machine Learning techniques that analyse Forex market.
 
-Components
+# Components
 
 1-Connection
 
