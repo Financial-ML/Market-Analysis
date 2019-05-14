@@ -8,11 +8,11 @@ In Market Analysis we build the basics tools that help us to predict the market 
 
 * [Connection](#Connection)
 
-* Dataset
+* [Dataset](#Dataset)
 
-* ML-Models
+* [ML-Models](#ML-Models)
 
-* Terster
+* [Terster](#Terster)
 
 
 ### Connection
