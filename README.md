@@ -25,6 +25,9 @@ Connect the strategy that has been developed in Python with MQL4 in a real time 
 
 ### Introduction
 
+Create a Dataset for any symbol in any period of time in Forex market that contain this [features](#Features).
+
+#### Features
 ## ML-Models
 
 ### Introduction
