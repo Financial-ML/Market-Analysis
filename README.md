@@ -28,10 +28,12 @@ Connect the strategy that has been developed in Python with MQL4 in a real time 
 Create a Dataset for any symbol in any period of time in Forex market that contain this [features](#Features).
 
 #### Features
+
 ## ML-Models
 
 ### Introduction
-
+Different machine learning models that i used to learn from the [Dataset](#Dataset).
 ## Terster
 
 ### Introduction
+Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
