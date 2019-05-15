@@ -24,12 +24,12 @@ Connect the strategy that has been developed in Python with MQL4 in a real time 
 ### How we do it
 * I have modified the code that has been developed by [darwinex-labs](https://github.com/darwinex).
 * The structure of the code has developed on server/client structure were MQL4-connector is the server and Python-connector is the client.
-* I modifie it to receive market data from the server (MQL4) in a live time and predict in the client side (Python) by load the machine learning model from ML-models in the client.
-* Then if we got new prediction send order to server to close the previous order and open a new order based on the new prediction.
+* I modifie it to receive market data from the server (MQL4) in a live time and predict in the client side (Python) by load the machine learning model from [ML-models](#ML-Models).
+* Then if we got new prediction send order back to server to close the previous order and open a new order based on the new prediction.
 
-MQL4-connector  :(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the server .
+MQL4-connector  :(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the server.
 
-Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client .
+Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client.
 ### Setup
 
 ## Dataset
