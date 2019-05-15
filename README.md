@@ -35,8 +35,10 @@ Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client.
 1. Download the code in connect [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/Connect).
 1. open MQL4 and any python IDE.
 1. load MQL4-connector in MQL4.
-**Note:** Make sure that you enable Auto Trading
-1.
+
+**Note:** Make sure that you enable Auto Trading.
+1.In Python IDE in console type the following:
+
 
 ## Dataset
 
