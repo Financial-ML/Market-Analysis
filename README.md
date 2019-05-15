@@ -22,6 +22,10 @@ In Market Analysis we build the basics tools that help us to predict the market 
 Connect the strategy that has been developed in Python with MQL4 in a real time connection the structure has been developed by [darwinex-labs](https://github.com/darwinex) you can see their project for installation and more information [(here)](https://github.com/darwinex/dwx-zeromq-connector).
 
 ### How we do it
+I have modified the code that has been developed by [darwinex-labs](https://github.com/darwinex).
+The structure of the code has developed on server/client structure were MQL4 is the server and the model that has been developed in Python is the client.
+I modifie it to receive market data from the server (MQL4) in a live time and predict in the client side (Python).
+Then if we got new prediction send order to server to close the previous  order and open a new order based on the new prediction.
 
 ### Setup
 
