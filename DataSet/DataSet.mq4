@@ -7,6 +7,7 @@
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 #property strict
+int num_bar = 3000;//number of Bars
 //+------------------------------------------------------------------+
 //| Script program start function                                    |
 //+------------------------------------------------------------------+
@@ -25,7 +26,7 @@ int filehandle=FileOpen("DataSet.csv",FILE_WRITE|FILE_READ|FILE_CSV,',');
    if(filehandle!=INVALID_HANDLE)
      {
       FileWrite(filehandle,"DATE","OPEN","CLOSE","HIGH","LOW","VOLUME","MA","STO","FIBO","AC","BUL","ICCI","MACD","RSI","BEAR","AD","ATR","AO","MOM","OSMA","MARKET");
-      for(int i=3200;i>=2;i--){
+      for(int i=num_bar;i>=1;i--){
       date=iTime(NULL,0,i);
       open=OPEN(i);
       close=CLOSE(i);
