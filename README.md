@@ -1,6 +1,6 @@
 # Market-Analysis
 
-### overview
+### Overview
 
 In Market Analysis we build the basics tools that help us to predict the market by connect to MQL4 in a real time from other programing languge , create a dataset by pulling data from the market , Analysis the data using different Machine Learning techniques , and test it in MQL4 with real time trading.
 
@@ -31,8 +31,11 @@ MQL4-connector  :(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the server.
 
 Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client.
 ### Setup
-1. Follow installation steps in [(here)](https://github.com/darwinex/dwx-zeromq-connector).
+1. Follow ZMQ installation steps in [(here)](https://github.com/darwinex/dwx-zeromq-connector).
 1. Download the code in connect [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/Connect).
+1. Generate the Dataset [(here)](#Dataset) to use it in ML-Models.
+1. Generate the Model [(here)](#ML-Models).
+1. Copy the Model in the same project of connect code.
 1. open MQL4 and any python IDE.
 1. load MQL4-connector in MQL4.
 1. In Python IDE in console type the following in order:
