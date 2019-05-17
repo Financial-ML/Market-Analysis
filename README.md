@@ -36,7 +36,7 @@ Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client.
 1. Generate the Dataset [(here)](#Dataset) to use it in ML-Models.
 1. Generate the Model [(here)](#ML-Models).
 1. Copy the Model in the same project of connect code.
-1. open MQL4 and any python IDE.
+1. Open MQL4 and any python IDE.
 1. load MQL4-connector in MQL4.
 1. In Python IDE in console type the following in order:
 
@@ -54,8 +54,6 @@ _zmq._trader_()
 
 **Note:** Make sure that you enable Auto Trading.
 
-
-
 ## Dataset
 
 ### Introduction
@@ -63,11 +61,32 @@ _zmq._trader_()
 Create a Dataset for any symbol in any period of time in Forex market that contain this [features](#Features).
 
 ### How we do it
-
+We do it by pulling data from MQL4 in to our CSV file  , the data is pulled using MQL4 build in functions.
 ### Setup
-
+1. Git in the code and write the number of bars you need.
+1. Run the script (Dataset) in any symbol and any period of time.
 #### Features
-
+"OPEN","CLOSE","HIGH","LOW","VOLUME","MA","STO","FIBO","AC","BUL","ICCI","MACD","RSI","BEAR","AD","ATR","AO","MOM","OSMA","MARKET"
+      open=OPEN(i);
+      close=CLOSE(i);
+      high=HIGH(i);
+      low=LOW(i);
+      volume=VOLUME(i);
+      ma=movingaverge(i);
+      sto=Stochastic(i);
+      fibo=fibonacci(i);
+      ac=AC(i);
+      bul=BUL(i);
+      ic=ICCI(i);
+      macd=MACD(i);
+      rsi=RSI(i);
+      bear=BEAR(i);
+      ad=AD(i);
+      atr=ATR(i);
+      ao=AO(i);
+      mom=MOM(i);
+      osma=OSMA(i);
+      market=Market(i);
 ## ML-Models
 
 ### Introduction
@@ -76,7 +95,7 @@ Different machine learning models that i used to learn from the [Dataset](#Datas
 ### How we do it
 
 ### Setup
-
+1. It will generate a CSV file in your MQL4 file copy the CSV file in to your ML-Model prject
 ## Terster
 
 ### Introduction
