@@ -12,7 +12,7 @@ In Market Analysis we build the basics tools that help us to predict the market 
 
 * [Connection](#Connection)
 
-* [Terster](#Terster)
+* [Tester](#Tester)
 
 ## Dataset
 
@@ -85,7 +85,7 @@ Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the client.
 1. Generate the Model [(here)](#ML-Models).
 1. Copy the PKL file in the same Python project of Connect code.
 1. Open MQL4 and any python IDE.
-1. load MQL4-connector in MQL4.
+1. Load MQL4-connector in MQL4.
 1. In Python IDE in console type the following in order:
 
 ```
@@ -102,7 +102,7 @@ _zmq._trader_()
 
 **Note:** Make sure that you enable Auto Trading.
 
-## Terster
+## Tester
 
 ### Introduction
 Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
@@ -112,15 +112,15 @@ Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
 * And MQL4 cannot test any strategy developed out side MQL4. 
 * What we have done is that we connect from strategy tester in MQL4 with Python-Tester
 * And save the prediction and the time in CSV file in a period of time.
-* then convert the file in to a common mql4 file.
-* And test it in mql4.
+* Then convert the file in to a common MQL4 file.
+* And test it in MQL4.
 
 MQL4-Tester  :(DWX_ZeroMQ_Server_v2.0.1_RC8.mq4) the server.
 
 Python-Tester:(DWX_ZeroMQ_tester.py) the client.
 ### Setup
 1. Follow ZMQ installation steps in [(here)](https://github.com/darwinex/dwx-zeromq-connector).
-1. Download the code in Tester [(here)]
+1. Download the code in Tester [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/Tester)
 1. Generate the Dataset [(here)](#Dataset) to use it in ML-Models.
 1. Generate the Model [(here)](#ML-Models).
 1. Copy the PKL file in the same project of Tester code.
@@ -137,14 +137,14 @@ _zmq._DWX_MTX_SUBSCRIBE_MARKETDATA_('GOLD')
 
 1. Load MQL4-Tester in MQL4 strategy tester.
 
-1. Go to Python IDE in console type the following :
+1. Go to Python IDE in console type :
 
 ```
 _zmq._tester_()
 ```
 1. After generate a CSV file copy the file in to MQL4 files directory.
-1. load the converter script.
-1. now test the stratgy by load DWX_ZeroMQ_tester2.mq4 in MQL4 strategy tester
+1. Load the converter script.
+1. Now test the stratgy by load DWX_ZeroMQ_tester2.mq4 in MQL4 strategy tester
 
 **Note:** The order is important.
 
