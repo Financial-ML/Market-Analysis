@@ -63,6 +63,7 @@ Create a Dataset for any symbol in any period of time in Forex market that conta
 ### How we do it
 We do it by pulling data from MQL4 in to our CSV file  , the data is pulled using MQL4 build in functions.
 ### Setup
+1. Download the code in Dataset [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/DataSet)
 1. Git in the code and write the number of bars you need.
 1. Run the script (Dataset) in any symbol and any period of time.
 #### Features
@@ -95,7 +96,9 @@ Different machine learning models that i used to learn from the [Dataset](#Datas
 ### How we do it
 
 ### Setup
-1. It will generate a CSV file in your MQL4 file copy the CSV file in to your ML-Model prject
+1. After creating the Dataset copy the CSV file in to your python project.
+1. Download the code in ML-Models [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/ML-Models) in to your python project.
+2. Run the program.
 ## Terster
 
 ### Introduction
