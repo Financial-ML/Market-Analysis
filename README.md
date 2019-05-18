@@ -27,15 +27,15 @@ Connect the strategy that has been developed in Python with MQL4 in a real time 
 * I modifie it to receive market data from the server (MQL4) in a live time and predict in the client side (Python) by load the machine learning model from [ML-models](#ML-Models).
 * Then if we got new prediction send order back to server to close the previous order and open a new order based on the new prediction.
 
-MQL4-connector  :(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the server.
+MQL4-connector  :(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the server.
 
-Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.mq4) the client.
+Python-connector:(DWX_ZeroMQ_Connector_v2_0_1_RC8.py) the client.
 ### Setup
 1. Follow ZMQ installation steps in [(here)](https://github.com/darwinex/dwx-zeromq-connector).
 1. Download the code in connect [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/Connect).
 1. Generate the Dataset [(here)](#Dataset) to use it in ML-Models.
 1. Generate the Model [(here)](#ML-Models).
-1. Copy the Model in the same project of connect code.
+1. Copy the PKL file in the same project of Connect code.
 1. Open MQL4 and any python IDE.
 1. load MQL4-connector in MQL4.
 1. In Python IDE in console type the following in order:
@@ -91,7 +91,7 @@ We do it by pulling data from MQL4 in to our CSV file  , the data is pulled usin
 ## ML-Models
 
 ### Introduction
-Different machine learning models that i used to learn from the [Dataset](#Dataset).
+Different machine learning models that we used to learn from the [Dataset](#Dataset).
 
 ### How we do it
 * We build the the models in python using Tensorflow.
@@ -101,7 +101,7 @@ Different machine learning models that i used to learn from the [Dataset](#Datas
 ### Setup
 1. After creating the [Dataset](#Dataset) copy the CSV file in to your python project.
 1. Download the code in ML-Models [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/ML-Models) in to your python project.
-2. Run the program.
+2. Run the program it will generate a PKL file.
 ## Terster
 
 ### Introduction
@@ -109,5 +109,18 @@ Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
 
 ### How we do it
 
+MQL4-Tester  :(DWX_ZeroMQ_Server_v2.0.1_RC8.mq4) the server.
+
+Python-Tester:(DWX_ZeroMQ_tester.py) the client.
 ### Setup
+1. Follow ZMQ installation steps in [(here)](https://github.com/darwinex/dwx-zeromq-connector).
+1. Download the code in Tester [(here)]
+1. Generate the Dataset [(here)](#Dataset) to use it in ML-Models.
+1. Generate the Model [(here)](#ML-Models).
+1. Copy the PKL file in the same project of Tester code.
+1. Open MQL4 and any python IDE.
+1. Load MQL4-Tester in MQL4.
+
+
+**Note:** The order is important.
 
