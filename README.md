@@ -108,6 +108,9 @@ _zmq._trader_()
 Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
 
 ### How we do it
+* The structure of Tester component is complicated because the strategy developed outside MQL4.
+* And MQL4 cannot test any strategy developed out side MQL4. 
+* What we have done is that we connect from strategy tester in MQL4 with Python-Tester
 
 MQL4-Tester  :(DWX_ZeroMQ_Server_v2.0.1_RC8.mq4) the server.
 
