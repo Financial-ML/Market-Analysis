@@ -94,9 +94,12 @@ We do it by pulling data from MQL4 in to our CSV file  , the data is pulled usin
 Different machine learning models that i used to learn from the [Dataset](#Dataset).
 
 ### How we do it
+* We build the the models in python using Tensorflow.
+* It learn from our predefined Dataset.
+* And save it after finsh traning in PKL file.
 
 ### Setup
-1. After creating the Dataset copy the CSV file in to your python project.
+1. After creating the [Dataset](#Dataset) copy the CSV file in to your python project.
 1. Download the code in ML-Models [(here)](https://github.com/Financial-ML/Market-Analysis/tree/master/ML-Models) in to your python project.
 2. Run the program.
 ## Terster
