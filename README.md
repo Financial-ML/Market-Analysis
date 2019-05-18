@@ -122,8 +122,26 @@ Python-Tester:(DWX_ZeroMQ_tester.py) the client.
 1. Generate the Model [(here)](#ML-Models).
 1. Copy the PKL file in the same project of Tester code.
 1. Open MQL4 and any python IDE.
-1. Load MQL4-Tester in MQL4.
+1. Go to Python IDE in console type the following in order:
 
+```
+_zmq = DWX_ZeroMQ_Connector(_SUB_PORT=32771)
+```
+
+```
+_zmq._DWX_MTX_SUBSCRIBE_MARKETDATA_('GOLD')
+```
+
+1. Load MQL4-Tester in MQL4 strategy tester.
+
+1. Go to Python IDE in console type the following :
+
+```
+_zmq._tester_()
+```
+1. After generate a CSV file copy the file in to MQL4 files directory.
+1. load the converter script.
+1. now test the stratgy by load DWX_ZeroMQ_tester2.mq4 in MQL4 strategy tester
 
 **Note:** The order is important.
 
