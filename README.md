@@ -111,6 +111,9 @@ Tool that use to test the strategy that has been developed outside MQL4 in MQL4.
 * The structure of Tester component is complicated because the strategy developed outside MQL4.
 * And MQL4 cannot test any strategy developed out side MQL4. 
 * What we have done is that we connect from strategy tester in MQL4 with Python-Tester
+* And save the prediction and the time in CSV file in a period of time.
+* then convert the file in to a common mql4 file.
+* And test it in mql4.
 
 MQL4-Tester  :(DWX_ZeroMQ_Server_v2.0.1_RC8.mq4) the server.
 
