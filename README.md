@@ -144,7 +144,7 @@ _zmq._tester_()
 ```
 1. After generate a CSV file copy the file in to MQL4 files directory.
 1. Load the converter script.
-1. Now test the stratgy by load DWX_ZeroMQ_tester2.mq4 in MQL4 strategy tester
+1. Now test the stratgy by load DWX_ZeroMQ_tester2.mq4 in MQL4 strategy tester.
 
 **Note:** The order is important.
 
