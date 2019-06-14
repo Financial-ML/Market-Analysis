@@ -135,7 +135,7 @@ _zmq = DWX_ZeroMQ_Connector(_SUB_PORT=32771)
 _zmq._DWX_MTX_SUBSCRIBE_MARKETDATA_('GOLD')
 ```
 
-1. Load MQL4-Tester in MQL4 strategy tester.
+1. Load MQL4-server in MQL4 strategy tester.
 
 1. Go to Python IDE in console type :
 
